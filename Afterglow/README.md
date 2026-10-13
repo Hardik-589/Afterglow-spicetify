@@ -22,4 +22,4 @@ If your theme folder does not exist yet, create `%appdata%\spicetify\Themes\` fi
 spicetify config current_theme "" color_scheme ""
 spicetify apply
 ``
-## Hope you will like it.
+## Hope you will like it :D
