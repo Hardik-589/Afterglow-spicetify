@@ -1,0 +1,16 @@
+
+{
+  "name": "Afterglow",
+  "description": "A dark Spicetify theme with plum gradients and vivid pink accents.",
+  "preview": "preview.png",
+  "usercss": "user.css",
+  "schemes": "color.ini",
+  "readme": "README.md",
+  "authors": [
+    {
+      "name": "Hardik-589",
+      "url": "https://github.com/Hardik-589"
+    }
+  ],
+  "tags": ["dark", "purple", "pink", "gradient", "minimal"]
+}

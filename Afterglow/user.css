@@ -1,0 +1,99 @@
+/*
+  AFTERGLOW — a dark, plum-and-pink starter theme for Spicetify
+  Keep selectors small and easy to tweak. Spotify's internal class names
+  can change between client updates, so test after Spotify updates.
+*/
+
+:root {
+    --afterglow-radius: 12px;
+    --afterglow-pink: #ff5a91;
+    --afterglow-pink-soft: rgba(255, 90, 145, 0.10);
+    --afterglow-border: rgba(255, 255, 255, 0.055);
+}
+
+/* A little contrast between Spotify's main view, library, and player. */
+.Root__top-container,
+.main-view-container {
+    background: var(--spice-main) !important;
+}
+
+.main-yourLibraryX-libraryContainer,
+.main-yourLibraryX-library {
+    background: var(--spice-sidebar) !important;
+}
+
+.Root__now-playing-bar,
+.main-nowPlayingBar-nowPlayingBar {
+    background: var(--spice-player) !important;
+    border-top: 1px solid var(--afterglow-border);
+}
+
+/* Softer edges for album, playlist, and artist tiles. */
+.main-card-card,
+.main-cardImage-imageWrapper,
+.main-entityHeader-image,
+.main-entityHeader-headerText {
+    border-radius: var(--afterglow-radius);
+}
+
+.main-card-card {
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.main-card-card:hover {
+    background: var(--afterglow-pink-soft) !important;
+}
+
+/* Subtle row hover instead of a harsh block of color. */
+.main-trackList-trackListRow {
+    border-radius: 8px;
+    transition: background-color 140ms ease;
+}
+
+.main-trackList-trackListRow:hover {
+    background: rgba(255, 255, 255, 0.055) !important;
+}
+
+/* Rounded search and text fields. */
+input,
+.main-topBar-searchBox,
+[data-testid="search-input"] {
+    border-radius: 999px !important;
+}
+
+/* Bring keyboard focus into the theme without hiding the focus indicator. */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--spice-button) !important;
+    outline-offset: 2px;
+}
+
+/* A small, theme-matched scrollbar where Chromium exposes these selectors. */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 90, 145, 0.27);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 90, 145, 0.48);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
